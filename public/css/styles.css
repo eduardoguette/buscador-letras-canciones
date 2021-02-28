@@ -5,14 +5,28 @@
 }
  
 
-.grid-hero{
-	background-image: url('../images/hero.jpg');
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-.text-hero{
-	background: -webkit-linear-gradient(rgb(36, 36, 36), rgb(124, 32, 167), rgb(218, 43, 43));
+
+.text-hero {
+ 
+  background: linear-gradient(264.51deg, #FFE580 4.38%, #FF7571 11.51%, #FF7270 25.06%, #EA5DAD 36.04%, #C2A0FD 47.63%, #9867F0 59.03%, #3BF0E4 69.96%, #33CE43 83.74%, #B2F4B6 95.62%);
+  background-position: 58% 50%;
+  background-size: 500%;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  animation: text-gradient 30s infinite;
+}
+@keyframes text-gradient{
+0% {
+    background-position: 58% 50%;
+}
+25% {
+    background-position: 100% 0%;
+}
+75% {
+    background-position: 10% 50%;
+}
+100% {
+    background-position: 58% 50%;
+}
 }

@@ -7,35 +7,35 @@
   <title>Buscar Canciones</title>
   <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body class="w-full bg-gray-100">
+<body>
   <header
-    class="flex items-center justify-between w-full h-20 px-8 bg-gray-800 border-b border-gray-600 shadow-lg">
+    class="flex items-center justify-between w-full h-20 px-6 mx-auto bg-white border-b border-gray-100 shadow lg:px-40 ">
     <nav class="flex items-center space-x-5 justify-items-center">
       <li class="list-none">
         <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" width="162" height="162"
           viewBox="0 0 162 162" fill="none">
-          <rect width="162" height="162" rx="81" fill="white" />
+          <rect width="162" height="162" rx="81" fill="black" />
           <path
             d="M114.5 76.6699C117.833 78.5944 117.833 83.4056 114.5 85.3301L68 112.177C64.6667 114.101 60.5 111.696 60.5 107.847L60.5 54.1532C60.5 50.3042 64.6667 47.8986 68 49.8231L114.5 76.6699Z"
             fill="#D62839" />
         </svg>
       </li>
       <li
-        class="hidden px-4 py-2 font-medium text-white list-none rounded-lg cursor-pointer md:block hover:border hover:bg-red-500">
+        class="hidden px-4 py-2 font-medium text-gray-900 list-none rounded-lg cursor-pointer md:block hover:border hover:bg-red-500">
         Buscar letra
       </li>
       <li
-        class="hidden px-4 py-2 font-medium text-white list-none rounded-lg cursor-pointer md:block hoverborder hover:bg-red-500">
+        class="hidden px-4 py-2 font-medium text-gray-900 list-none rounded-lg cursor-pointer md:block hoverborder hover:bg-red-500">
         Busquedas recientes
       </li>
       <li
-        class="hidden px-4 py-2 font-medium text-white list-none rounded-lg cursor-pointer md:block hoverborder hover:bg-red-500">
+        class="hidden px-4 py-2 font-medium text-gray-900 list-none rounded-lg cursor-pointer md:block hoverborder hover:bg-red-500">
         Tus favoritos
       </li>
     </nav>
     <div class="relative items-center hidden space-x-6 md:flex">
       <div
-        class="flex items-center justify-center text-white rounded-full cursor-pointer hover:bg-gray-800 w-9 h-9 notification hover:text-gray-400">
+        class="flex items-center justify-center text-gray-900 rounded-full cursor-pointer hover:bg-gray-200 w-9 h-9 notification hover:text-gray-800">
         <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
           stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -65,9 +65,8 @@
         </ul>
       </div>
     </div>
-    <div aria-describedby="hamburger menu" class="block text-white md:hidden">
-      <button id="show-menu-mobile"
-        class="rounded focus:outline-none focus:ring-2 focus:ring-opacity-70 focus:ring-red-700">
+    <div aria-describedby="hamburger menu" class="block text-gray-900 md:hidden">
+      <button id="show-menu-mobile" class="rounded focus:outline-none ">
         <svg class="w-8 h-8 stroke-1" xmlns="http://www.w3.org/2000/svg" fill="none"
           viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
@@ -78,7 +77,7 @@
 
   </header>
   <div id="menu-mobile"
-    class="absolute left-0 right-0 z-20 hidden mx-auto text-white bg-gray-800 shadow-lg rounded-bl-md rounded-br-md"
+    class="absolute left-0 right-0 z-20 hidden mx-auto text-white bg-gray-800 rounded-bl-lg rounded-br-lg shadow-lg"
     aria-describedby="menu-mobile">
     <ul class="my-4">
       <li class="px-3 py-1">
@@ -128,11 +127,11 @@
   </div>
 
   <main>
-    <section class="relative w-full border">
+    <section class="relative bg-gray-50">
       <div class="wrapper">
-        <div class="flex w-full grid-hero h-96 md:h-hero">
-          <div class="w-6/12">
-            <h1 class="absolute w-6/12 px-4 text-2xl font-bold text-hero top-32">
+        <div class="flex w-full grid-hero">
+          <div class="flex items-center lg:h-72">
+            <h1 class="px-6 py-10 text-5xl font-extrabold lg:px-40 lg:text-6xl text-hero ">
               Busca la letra de tus artistas favoritos
             </h1>
           </div>
@@ -141,16 +140,18 @@
     </section>
     <section class="form-find">
       <div class="wrapper">
-        <form action="" class="mx-auto ">
+        <form class="mx-auto" id="formulario-buscar">
           <div
-            class="flex flex-col items-center py-8 mx-auto bg-white rounded-md w-12/12 grid-form-find">
-            <input type="text" placeholder="Escribe tu canción aquí."
-              class="w-10/12 px-3 py-2 text-sm font-medium border border-red-100 focus:outline-none rounded-tl-md rounded-tr-md focus:border-red-600">
-            <button type="submit"
-              class="relative flex items-center justify-center w-10/12 py-2 text-xs font-medium text-white bg-red-500 group hover:bg-red-600 rounded-bl-md rounded-br-md focus:outline-none focus:boder focus:border-red-200">
+            class="flex flex-col items-center w-10/12 py-8 mx-auto bg-white rounded-md md:w-6/12 lg:w-4/12 grid-form-find">
+            <input type="text" placeholder="Artista" id="artista"
+              class="w-full px-3 py-4 text-sm font-medium border border-red-100 focus:outline-none rounded-tl-md rounded-tr-md focus:border-red-600">
+            <input type="text" placeholder="Canción" id="cancion"
+              class="w-full px-3 py-3 text-sm font-medium border border-red-100 focus:outline-none focus:border-red-600">
+            <button type="submit" id="btn-form"
+              class="relative flex items-center justify-center w-full py-3 text-xs font-medium text-white bg-red-500 group hover:bg-red-600 rounded-bl-md rounded-br-md focus:outline-none focus:boder focus:border-red-200">
               <span class="absolute inset-y-0 left-0 flex items-center pl-3">
 
-                <svg class="absolute w-4 h-4 text-red-400 group-hover:text-red-50 left-2"
+                <svg class="absolute w-4 h-4 text-red-400 group-hover:text-red-50 left-3"
                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                   stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -166,86 +167,17 @@
     </section>
     <section class="bg-white result ">
       <div class="wrapper">
-        <div class="w-10/12 px-4 mx-auto text-sm font-medium text-white bg-indigo-900 rounded-md grid-result result">
-          <h1 class="py-4 text-xl font-bold">Tu letra esta aquí:</h1>
-          <p class="pb-3">
-            Let the King of my heart
-            Be the mountain where I run
-            The fountain I drink from
-            Oh, He is my song
-            Let the King of my heart
-            Be the shadow where I hide
-            The ransom for my life
-            Oh, He is my song
-            'Cause You are good
-            You are good, oh oh
-            You are good
-            You are good, oh oh
-            You are good
-            You are good, oh oh
-            You are good
-            You are good, oh oh
-            And let the King of my heart
-            Be the wind inside my sails
-            The anchor in the waves
-            Oh oh, He is my song
-            Let the King of my heart
-            Be the fire inside my veins
-            The echo of my days
-            Oh oh, He is my song
-            Let the King of my heart
-            Be the wind inside my sails
-            The anchor in the waves
-            Oh oh, He is my song
-            Let the King of my heart
-            Be the fire inside my veins
-            The echo of my days
-            Oh, He is my song
-            'Cause You are good
-            You are good, oh oh
-            You are good
-            You are good, oh oh
-            You are good
-            You are good, oh oh
-            You are good
-            You are good, oh oh
-            You're never gonna let
-            You're never gonna let me down
-            And You're never gonna let
-            You're never gonna let me down
-            You're never gonna let
-            You're never gonna let me down
-            You're never gonna let
-            You're never gonna let me down
-            You're never gonna let
-            You're never gonna let
-            You're never gonna let me down
-            You're never gonna let
-            You're never gonna let me down
-            You're never gonna let
-            You're never gonna let me down
-            Oh 'cause You are good
-            You are good, oh oh
-            'Cause You are good
-            You are good, oh oh
-            'Cause You are good
-            You are good, oh oh
-            You are good
-            You are good, oh oh
-            You're never gonna let
-            You're never gonna let me down
-            You're never gonna let
-            You're never gonna let me down
-            You're never gonna let
-            You're never gonna let me down
-            You're never gonna let
-            You're never gonna let me down
-            'Cause You are good
-            You are good, oh oh
-            You are good
-            You are good, oh oh
+        <div
+          class="w-10/12 px-4 mx-auto text-sm font-medium text-white bg-gray-900 rounded-md resultado md:w-6/12 lg:w-4/12 grid-result result">
+          <h1 class="hidden px-2 pt-4 text-2xl font-bold text-red-400"></h1>
+          <p class="hidden px-2 py-6 text-lg "> 
+
           </p>
-          
+      
+        </div>
+        <div
+          class="hidden w-10/12 px-4 py-3 mx-auto text-sm font-medium text-black border border-l-4 border-red-600 rounded-md mensaje md:w-6/12 lg:w-4/12 grid-result">
+
         </div>
       </div>
     </section>
@@ -253,6 +185,7 @@
   <footer class="py-4 bg-white">
     <p class="text-xs font-medium text-center">Eduardo Guette</p>
   </footer>
-  <script src="./js/main.js"></script>
+  <script src="./js/interfaz.js" type="module"></script>
+  <script src="./js/main.js" type="module"></script>
 </body>
 </html>

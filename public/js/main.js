@@ -1,13 +1,35 @@
-const btnMenuMobile = document.querySelector('#show-menu-mobile');
-const menuMobile = document.querySelector('#menu-mobile');
+import * as UI from './interfaz.js'
+import API from './api.js'
 
-btnMenuMobile.addEventListener('click', () => {
-  menuMobile.classList.toggle('hidden')
-});
+UI.formulario.addEventListener('submit', buscarCancion)
 
-const btnPerfil = document.querySelector('#profile')
-const menuProfile = document.querySelector('#menu-profile')
+function buscarCancion(e) {
+  e.preventDefault()
+  const artista = document.querySelector('#artista').value
+  const cancion = document.querySelector('#cancion').value
 
-btnPerfil.addEventListener('click', () => {
-  menuProfile.classList.toggle('hidden')
-})
+  if (artista === '' || cancion == '') {
+    imprimerMensaje('Todos los campos son obligarotios')
+    return
+  }
+
+  const busqueda = new API(artista, cancion)
+  UI.resultadoLetra.textContent = ""
+  UI.resultadoNombreLetra.textContent = ""
+  
+
+}
+
+
+
+
+export function imprimerMensaje(mensaje) {
+  UI.divMensaje.innerHTML = `${mensaje}`
+  UI.divMensaje.classList.remove('hidden')
+
+  setTimeout(() => {
+    UI.divMensaje.classList.add('hidden')
+    UI.divMensaje.innerHTML = ''
+  }, 3000)
+}
+
